@@ -1,0 +1,145 @@
+﻿<Page x:Class="Animax.SignUpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Animax"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="SignUpPage">
+
+    <Grid x:Name="SignUpPageGrid">
+
+        <StackPanel Background="#2D2D2D">
+
+            <Image Width="200" Height="100" Margin="0, 60, 0, 0">
+                    <Image.Source>logo.png</Image.Source>
+                </Image>
+
+                <Label Width="200" Foreground="White" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" VerticalAlignment="Center">Регистрация</Label>
+
+
+                <Grid HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Foreground="White" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="5" Grid.Column="0">Имя</Label>
+                    <TextBox x:Name="sign_up_name_textbox" VerticalAlignment="Center" Height="30" Width="200" Foreground="White" Background="#443434" FontSize="20" FontFamily="Bahnschrift Light Condensed" BorderBrush="#FFFF5656"  Grid.Column="1">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </Grid>
+
+                <Grid HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Foreground="White" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="5" Grid.Column="0">Фамилия</Label>
+                    <TextBox x:Name="sign_up_surname_textbox" VerticalAlignment="Center" Height="30" Width="200" Foreground="White" Background="#443434" FontSize="20" FontFamily="Bahnschrift Light Condensed" BorderBrush="#FFFF5656"  Grid.Column="1">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </Grid>
+
+                <Grid HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Foreground="White" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="5" Grid.Column="0">Email</Label>
+                <TextBox x:Name="sign_up_email_textbox" VerticalAlignment="Center" Height="30" Width="200" Foreground="White" Background="#443434" FontSize="20" FontFamily="Bahnschrift Light Condensed" BorderBrush="#FFFF5656"  Grid.Column="1" TextChanged="sign_up_email_textbox_TextChanged">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </Grid>
+
+                <Grid HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Foreground="White" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="5" Grid.Column="0">Пароль</Label>
+                <TextBox x:Name="sign_up_password_textbox" VerticalAlignment="Center" Height="30" Width="200" Foreground="White" Background="#443434" FontSize="20" FontFamily="Bahnschrift Light Condensed" BorderBrush="#FFFF5656"  Grid.Column="1" TextChanged="sign_up_password_textbox_TextChanged">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                <Label x:Name="sign_up_password_error_label" Visibility="Hidden" Foreground="#FF5656" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="5" Grid.Column="2">[ ! ]</Label>
+            </Grid>
+
+                <Grid HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Foreground="White" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="5" Grid.Column="0">Повтор пароля</Label>
+                <TextBox x:Name="sign_up_repeat_password_textbox" Height="30" Width="200" Foreground="White" Background="#443434" FontSize="20" FontFamily="Bahnschrift Light Condensed" BorderBrush="#FFFF5656"  Grid.Column="1" TextChanged="sign_up_repeat_password_textbox_TextChanged">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                <Label x:Name="sign_up_repeat_password_error_label" Visibility="Hidden" Foreground="#FF5656" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="5" Grid.Column="2">[ ! ]</Label>
+            </Grid>
+
+            <Button x:Name="sign_up_button" BorderThickness="0" Background="#FF5656" Width="100" Height="30" Content="Войти" Foreground="White" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" Margin="10">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+            <Grid HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Width="60" Foreground="White" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" VerticalAlignment="Center" Grid.Column="0">
+                    Уже есть
+                </Label>
+                <TextBlock FontSize="20" FontFamily="Bahnschrift Light Condensed" Grid.Column="1" VerticalAlignment="Center">
+                <Hyperlink Foreground="#FFC700" NavigateUri="SignInPage.xaml" RequestNavigate="Sign_In_RequestNavigate">
+                <Run Text="аккаунт?"></Run>
+            </Hyperlink>
+                </TextBlock>
+            </Grid>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
