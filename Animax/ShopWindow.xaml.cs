@@ -10,7 +10,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace Animax
 {
@@ -22,6 +24,28 @@ namespace Animax
         public ShopWindow()
         {
             InitializeComponent();
+            ShopFrame.Content = new HomePage();
         }
+
+        private void Category_RequestNavigate(object sender, RequestNavigateEventArgs args)
+        {
+            ShopFrame.Content = new ProductPage();
+        }
+
+        private void Banner_RequestNavigate(object sender, RequestNavigateEventArgs args)
+        {
+            ShopFrame.Content = new HomePage();
+        }
+
+        private void Profile_RequestNavigate(object sender, RequestNavigateEventArgs args)
+        {
+            ShopFrame.Content = new ProfilePage();
+        }
+
+        private void Order_RequestNavigate(object sender, RequestNavigateEventArgs args)
+        {
+            ShopFrame.Content = new OrderPage();
+        }
+
     }
 }

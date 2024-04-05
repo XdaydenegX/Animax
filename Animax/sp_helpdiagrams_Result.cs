@@ -10,28 +10,13 @@
 namespace Animax
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Product
+    public partial class sp_helpdiagrams_Result
     {
-        public Product()
-        {
-            this.Category_Product = new HashSet<Category_Product>();
-
-        }
-    
-        public int id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public decimal price { get; set; }
-
-
-        public string inBasket { get; set; } = "В корзину";
-
-        public string inBasketCount { get; set; } = "-";
-
-        public Nullable<System.DateTime> created_at { get; set; }
-    
-        public virtual ICollection<Category_Product> Category_Product { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

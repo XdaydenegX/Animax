@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -33,13 +34,13 @@ namespace Animax
             mainframe.Content = new SignUpPage().SignUpPageGrid;
         }
 
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             string login_email_regex = @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
 
             if (!string.IsNullOrEmpty(login_email_textbox.Text.ToString()) || Regex.IsMatch(login_email_textbox.Text, login_email_regex))
             {
-                login_email_error_label.Visibility = Visibility.Hidden;
                 login_button.IsEnabled = true;
             }
             else
@@ -49,12 +50,38 @@ namespace Animax
             }
         }
 
+        private static string HashPassword(string password)
+        {
+            MD5 md5 = MD5.Create();
+            byte[] b = Encoding.ASCII.GetBytes(password);
+            byte[] hash = md5.ComputeHash(b);
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var a in hash)
+                sb.Append(a.ToString("X2"));
+
+
+            return Convert.ToString(sb);
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ShopWindow shopWindow = new ShopWindow();
-            shopWindow.Show();
-            AuthWindow authwindow = (AuthWindow)Application.Current.MainWindow;
-            authwindow.Close();
+            string hash_password = HashPassword(login_password_textbox.Text);
+
+            User user = Util.GetUserByLogin(login_email_textbox.Text, hash_password);
+
+            if (user != null)
+            {
+                ShopWindow shopWindow = new ShopWindow();
+                shopWindow.Show();
+                AuthWindow authwindow = (AuthWindow)Application.Current.MainWindow;
+                authwindow.Close();
+            }
+            else
+            {
+                MessageBox.Show("Такого пользователя не существует", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
         }
 

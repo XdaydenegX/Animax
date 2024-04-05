@@ -10,15 +10,10 @@
 namespace Animax
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Banner
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public byte[] image { get; set; }
-        public Nullable<System.DateTime> created_at { get; set; }
-        public Nullable<System.DateTime> end_date { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

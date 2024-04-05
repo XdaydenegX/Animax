@@ -1,0 +1,51 @@
+﻿<Page x:Class="Animax.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Animax"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HomePage">
+
+    <Grid Background="#2D2D2D">
+        <ListView BorderBrush="Transparent" Background="Transparent" ItemsSource="{Binding}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="2" HorizontalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Image Width="200" Height="100" Source="promotest.png">
+                                </Image>
+                                <Image Width="200" Height="100">
+                                    <Image.Source>/Resources/promotest.png</Image.Source>
+                                </Image>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Label Content="{Binding name}" VerticalContentAlignment="Center" Grid.Row="0" FontSize="16" Background="Transparent" FontWeight="SemiBold" Foreground="white"></Label>
+                                <Label Content="{Binding description}" VerticalContentAlignment="Center" Grid.Row="1" FontSize="16" Background="Transparent" Foreground="white"></Label>
+                                <Button Margin="0, 10, 0, 0" Grid.Row="2" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="110" Background="#FFC700" FontWeight="SemiBold"  Height="40" BorderBrush="Transparent" FontSize="20" Content="Перейти">
+                                    <Button.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="7"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

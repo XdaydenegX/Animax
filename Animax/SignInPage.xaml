@@ -14,7 +14,7 @@
                 <Image.Source>logo.png</Image.Source>
             </Image>
 
-            <Label Width="200" Foreground="White" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" VerticalAlignment="Center">Вход</Label>
+            <Label x:Name="login_header_label" Width="200" Foreground="White" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" VerticalAlignment="Center">Вход</Label>
 
 
             <Grid HorizontalAlignment="Center">
@@ -27,7 +27,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Label Foreground="White" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="5" Grid.Column="0">Email</Label>
-                <TextBox x:Name="login_email_textbox" VerticalAlignment="Center" Height="30" Width="200" Foreground="White" Background="#443434" FontSize="20" FontFamily="Bahnschrift Light Condensed" BorderBrush="#FFFF5656"  Grid.Column="1" TextChanged="TextBox_TextChanged">
+                <TextBox VerticalContentAlignment="Center" x:Name="login_email_textbox" VerticalAlignment="Center" Height="30" Width="200" Foreground="White" Background="#443434" FontSize="20" FontFamily="Bahnschrift Light Condensed" BorderBrush="#FFFF5656"  Grid.Column="1" TextChanged="TextBox_TextChanged">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="5"/>
@@ -47,7 +47,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Label Foreground="White" FontSize="20" FontFamily="Bahnschrift Light Condensed" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="5" Grid.Column="0">Пароль</Label>
-                <TextBox x:Name="login_password_textbox" IsEnabled="True" Height="30" Width="200" Foreground="White" Background="#443434" FontSize="20" FontFamily="Bahnschrift Light Condensed" BorderBrush="#FFFF5656"  Grid.Column="1" TextChanged="login_password_textbox_TextChanged">
+                <TextBox VerticalContentAlignment="Center" x:Name="login_password_textbox" IsEnabled="True" Height="30" Width="200" Foreground="White" Background="#443434" FontSize="20" FontFamily="Bahnschrift Light Condensed" BorderBrush="#FFFF5656"  Grid.Column="1" TextChanged="login_password_textbox_TextChanged">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="5"/>

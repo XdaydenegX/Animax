@@ -12,26 +12,13 @@ namespace Animax
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Banners
     {
-        public Product()
-        {
-            this.Category_Product = new HashSet<Category_Product>();
-
-        }
-    
         public int id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public decimal price { get; set; }
-
-
-        public string inBasket { get; set; } = "В корзину";
-
-        public string inBasketCount { get; set; } = "-";
-
+        public byte[] image { get; set; }
         public Nullable<System.DateTime> created_at { get; set; }
-    
-        public virtual ICollection<Category_Product> Category_Product { get; set; }
+        public Nullable<System.DateTime> end_date { get; set; }
     }
 }

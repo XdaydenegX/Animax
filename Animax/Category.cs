@@ -16,13 +16,13 @@ namespace Animax
     {
         public Category()
         {
-            this.Products = new HashSet<Product>();
+            this.Category_Product = new HashSet<Category_Product>();
         }
     
         public int id { get; set; }
         public string name { get; set; }
         public byte[] image { get; set; }
     
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Category_Product> Category_Product { get; set; }
     }
 }
